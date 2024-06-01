@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://l7sgoq14vc3e"]
+
+[ext_resource type="Texture2D" uid="uid://curwa0nfuputr" path="res://pixil-frame-0-47.png" id="1_gskbn"]
+[ext_resource type="Script" path="res://obsicle.gd" id="1_pt3gu"]
+
+[node name="Node2D" type="StaticBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_pt3gu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-25, -2.5, -12.5, 12.5, 5, 20, 22.5, 20, 20, 5, -5, -2.5, 25, -12.5, 20, -27.5, -5, -22.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gskbn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-25, -2.5, -12.5, 12.5, 5, 20, 22.5, 20, 20, 5, -5, -2.5, 25, -12.5, 20, -27.5, -7.5, -22.5)

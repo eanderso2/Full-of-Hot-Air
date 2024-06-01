@@ -1,0 +1,378 @@
+[gd_scene load_steps=23 format=3 uid="uid://xnut1lyv1bsr"]
+
+[ext_resource type="Script" path="res://VBoxContainer2.gd" id="1_u8pse"]
+[ext_resource type="FontFile" uid="uid://dj4wghlpfdosm" path="res://Rubik_Bubbles/RubikBubbles-Regular.ttf" id="2_6nwsx"]
+[ext_resource type="Texture2D" uid="uid://dtlucr7wrovi8" path="res://pixil-frame-0-68.png" id="3_m6kdn"]
+[ext_resource type="Texture2D" uid="uid://bphp416wjddwv" path="res://pixil-frame-0-42.png" id="4_pnghy"]
+[ext_resource type="Texture2D" uid="uid://c615iesgeb6gv" path="res://pixil-frame-0-74.png" id="5_qr6mr"]
+[ext_resource type="Texture2D" uid="uid://j6ae5merpgpi" path="res://pixil-frame-0-73.png" id="6_2tkmm"]
+[ext_resource type="Texture2D" uid="uid://po1h457li5su" path="res://pixil-frame-0-72.png" id="7_t2psj"]
+[ext_resource type="Texture2D" uid="uid://dba5wcsgbf5lb" path="res://pixil-frame-0-71.png" id="8_x7dn3"]
+[ext_resource type="Texture2D" uid="uid://dtnp4kvvemaqx" path="res://pixil-frame-0-70.png" id="9_4xes6"]
+[ext_resource type="Texture2D" uid="uid://p5n7b10yn1r7" path="res://pixil-frame-0-69.png" id="10_syut8"]
+[ext_resource type="AudioStream" uid="uid://di8a84snu2sbs" path="res://hot_air_menu.wav" id="11_id1h6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66fd8"]
+bg_color = Color(0.0627451, 0.505882, 0.756863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0823529, 0.223529, 0.960784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivcga"]
+bg_color = Color(0.14902, 0.635294, 0.92549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0823529, 0.223529, 0.960784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+anti_aliasing_size = 0.01
+
+[sub_resource type="Theme" id="Theme_0lx1j"]
+Button/colors/font_color = Color(0.14902, 0.635294, 0.92549, 1)
+Button/colors/font_focus_color = Color(0.0611949, 0.507711, 0.755072, 1)
+Button/colors/font_hover_color = Color(0.0611949, 0.507711, 0.755072, 1)
+Button/colors/font_hover_pressed_color = Color(0.0611949, 0.507711, 0.755072, 1)
+Button/colors/font_outline_color = Color(0, 0, 1, 1)
+Button/colors/font_pressed_color = Color(0.0611949, 0.507711, 0.755072, 1)
+Button/constants/outline_size = 4
+Button/fonts/font = ExtResource("2_6nwsx")
+Button/styles/focus = SubResource("StyleBoxFlat_66fd8")
+Button/styles/hover = SubResource("StyleBoxFlat_66fd8")
+Button/styles/normal = SubResource("StyleBoxFlat_ivcga")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xqld"]
+bg_color = Color(0.0627451, 0.505882, 0.756863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0823529, 0.223529, 0.960784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imjtn"]
+bg_color = Color(0.14902, 0.635294, 0.92549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0823529, 0.223529, 0.960784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjfo5"]
+bg_color = Color(0.14902, 0.635294, 0.92549, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id="Theme_slvho"]
+Button/colors/font_color = Color(0, 0.227451, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_7xqld")
+Button/styles/hover = SubResource("StyleBoxFlat_7xqld")
+Button/styles/normal = SubResource("StyleBoxFlat_imjtn")
+Panel/styles/panel = SubResource("StyleBoxFlat_wjfo5")
+
+[sub_resource type="Theme" id="Theme_ilmwm"]
+Button/colors/font_color = Color(0, 0.227451, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_7xqld")
+Button/styles/hover = SubResource("StyleBoxFlat_7xqld")
+Button/styles/normal = SubResource("StyleBoxFlat_imjtn")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8q6p3"]
+font = ExtResource("2_6nwsx")
+font_color = Color(0.14902, 0.635294, 0.92549, 1)
+outline_size = 4
+outline_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uiwo4"]
+font = ExtResource("2_6nwsx")
+font_color = Color(0.14902, 0.635294, 0.92549, 1)
+outline_size = 4
+outline_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7444"]
+font = ExtResource("2_6nwsx")
+font_size = 128
+font_color = Color(0.14902, 0.635294, 0.92549, 1)
+outline_size = 4
+outline_color = Color(0, 0, 1, 1)
+shadow_color = Color(0, 0, 0, 0.129412)
+shadow_offset = Vector2(-300, 465)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_u8pse")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -86.0
+offset_right = 150.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_0lx1j")
+text = "Play"
+
+[node name="Button3" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_0lx1j")
+text = "Settings"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 36.0
+offset_right = 150.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_0lx1j")
+text = "Quit"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_slvho")
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_right = 140.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ilmwm")
+value = 100.0
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -21.0
+offset_right = 54.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_8q6p3")
+
+[node name="Button4" type="Button" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 35.0
+offset_right = 150.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_0lx1j")
+text = "Done"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -86.0
+offset_right = 150.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_slvho")
+
+[node name="HSlider2" type="HSlider" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -61.0
+offset_right = 140.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ilmwm")
+value = 100.0
+
+[node name="Label2" type="Label" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -82.0
+offset_right = 54.5
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_uiwo4")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -461.5
+offset_top = 48.0
+offset_right = 461.5
+offset_bottom = 203.0
+grow_horizontal = 2
+text = "Full of Hot Air"
+label_settings = SubResource("LabelSettings_l7444")
+
+[node name="Sky-pixilart" type="Sprite2D" parent="."]
+position = Vector2(250, 397)
+texture = ExtResource("3_m6kdn")
+
+[node name="Sky-pixilart2" type="Sprite2D" parent="."]
+position = Vector2(750, 397)
+texture = ExtResource("3_m6kdn")
+
+[node name="Sky-pixilart3" type="Sprite2D" parent="."]
+position = Vector2(1250, 397)
+texture = ExtResource("3_m6kdn")
+
+[node name="Pixil-frame-0-42" type="Sprite2D" parent="."]
+position = Vector2(250, -103)
+texture = ExtResource("4_pnghy")
+
+[node name="Pixil-frame-0-43" type="Sprite2D" parent="."]
+position = Vector2(750, -103)
+texture = ExtResource("4_pnghy")
+
+[node name="Pixil-frame-0-44" type="Sprite2D" parent="."]
+position = Vector2(1250, -103)
+texture = ExtResource("4_pnghy")
+
+[node name="Pixil-frame-0-74" type="Sprite2D" parent="."]
+position = Vector2(215, 227)
+texture = ExtResource("5_qr6mr")
+
+[node name="Pixil-frame-0-73" type="Sprite2D" parent="."]
+position = Vector2(784, 53)
+texture = ExtResource("6_2tkmm")
+
+[node name="Pixil-frame-0-72" type="Sprite2D" parent="."]
+position = Vector2(1140, 319)
+texture = ExtResource("7_t2psj")
+
+[node name="Pixil-frame-0-71" type="Sprite2D" parent="."]
+position = Vector2(359, 311)
+texture = ExtResource("8_x7dn3")
+
+[node name="Pixil-frame-0-70" type="Sprite2D" parent="."]
+position = Vector2(538, 93)
+texture = ExtResource("9_4xes6")
+
+[node name="Pixil-frame-0-69" type="Sprite2D" parent="."]
+position = Vector2(857, 297)
+texture = ExtResource("10_syut8")
+
+[node name="Pixil-frame-0-75" type="Sprite2D" parent="."]
+position = Vector2(1154, 124)
+texture = ExtResource("5_qr6mr")
+
+[node name="Pixil-frame-0-76" type="Sprite2D" parent="."]
+position = Vector2(0, 209)
+texture = ExtResource("10_syut8")
+
+[node name="Pixil-frame-0-77" type="Sprite2D" parent="."]
+position = Vector2(159, 82)
+texture = ExtResource("9_4xes6")
+
+[node name="Pixil-frame-0-78" type="Sprite2D" parent="."]
+position = Vector2(888, 427)
+texture = ExtResource("7_t2psj")
+
+[node name="Pixil-frame-0-79" type="Sprite2D" parent="."]
+position = Vector2(187, 421)
+texture = ExtResource("9_4xes6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_id1h6")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="CanvasLayer" method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer" method="_on_button_2_pressed"]
+[connection signal="value_changed" from="CanvasLayer2/HSlider" to="CanvasLayer" method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer2/Button4" to="CanvasLayer" method="_on_button_4_pressed"]
+[connection signal="value_changed" from="CanvasLayer2/HSlider2" to="CanvasLayer" method="_on_h_slider_2_value_changed"]
+[connection signal="finished" from="AudioStreamPlayer" to="CanvasLayer" method="_on_audio_stream_player_finished"]
