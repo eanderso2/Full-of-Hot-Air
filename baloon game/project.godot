@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="Full of Hot Air"
-run/main_scene="res://start menu.tscn"
+run/main_scene="res://assets/scenes/start menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
+boot_splash/image="res://assets/textures/Screenshot 2024-06-07 at 2.34.24 PM.png"
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://assets/audio/default_bus_layout.tres"
+
+[autoload]
+
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -22,6 +31,10 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="baloon game"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [input]
 
@@ -39,4 +52,4 @@ menu={
 
 [physics]
 
-2d/default_gravity_vector=Vector2(2.08165e-12, -0.02)
+2d/default_gravity_vector=Vector2(2.08165e-12, 2.08165e-12)

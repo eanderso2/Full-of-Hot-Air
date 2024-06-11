@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://do1h4oikbme51"]
+
+[ext_resource type="Script" path="res://assets/scripts/item.gd" id="1_hulxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tne1u"]
+size = Vector2(30, 90)
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(0, 1)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_hulxp")
+metadata/color = "blue"
+
+[node name="Pixil-frame-0-94" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tne1u")
+
+[node name="Pixil-frame-0-101" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.996078)
+z_index = -3
+metadata/color = ""
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

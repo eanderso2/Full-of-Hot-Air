@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf4u4cwdshcon"]
+
+[ext_resource type="Script" path="res://assets/scripts/drop-off.gd" id="1_r2v12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttv0c"]
+size = Vector2(40, 33)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdyfr"]
+radius = 32.0
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_r2v12")
+metadata/color = ""
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 33.5)
+shape = SubResource("RectangleShape2D_ttv0c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_cdyfr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
