@@ -27,6 +27,7 @@ SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 [display]
 
 window/stretch/mode="viewport"
+display_server/driver.linuxbsd="wayland"
 
 [dotnet]
 
