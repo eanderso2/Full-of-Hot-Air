@@ -6,7 +6,7 @@ func _init():
 	startTime = Time.get_ticks_msec()/1000
 func _process(delta):
 	score = Time.get_ticks_msec()/1000 - startTime
-	$"../CanvasLayer/Label".text = "score: " + str(int(score))
+	$"../CanvasLayer/Label".text = "time: " + str(int(score))
 	if Input.is_action_pressed("up"):
 		linear_velocity.y -= 3
 

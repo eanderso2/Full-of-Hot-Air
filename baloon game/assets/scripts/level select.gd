@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$CanvasLayer/GridContainer/lvl1.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,16 +28,20 @@ func _on_lvl_4_pressed():
 
 
 func _on_lvl_5_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://assets/scenes/levels/lvl5.tscn")
 
 
 func _on_lvl_6_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://assets/scenes/levels/lvl6.tscn")
 
 
 func _on_lvl_7_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://assets/scenes/levels/lvl7.tscn")
 
 
 func _on_lvl_8_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://assets/scenes/levels/lvl8.tscn")
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://assets/scenes/start menu.tscn")

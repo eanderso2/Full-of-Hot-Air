@@ -3,6 +3,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Button.grab_focus()
 	SilentWolf.configure({
 	"api_key": "Dq0se9GGSj6CQKqSA8Uqe1DspMnF4Gdz3niPqhpD",
 	"game_id": "fullofhotair",
@@ -22,6 +23,7 @@ func _on_button_pressed():
 
 func _on_button_3_pressed():
 	hide()
+	$"../CanvasLayer2/HSlider2".grab_focus()
 	$"../CanvasLayer2".show()
 
 func _on_button_2_pressed():
@@ -34,6 +36,7 @@ func _on_h_slider_value_changed(value):
 
 
 func _on_button_4_pressed():
+	$Button.grab_focus()
 	$"../CanvasLayer2".hide()
 	show()
 

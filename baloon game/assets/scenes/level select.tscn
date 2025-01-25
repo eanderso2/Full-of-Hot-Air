@@ -1,14 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://wpsa1gva3g46"]
+[gd_scene load_steps=9 format=3 uid="uid://wpsa1gva3g46"]
 
 [ext_resource type="Script" path="res://assets/scripts/level select.gd" id="1_g703y"]
 [ext_resource type="FontFile" uid="uid://dj4wghlpfdosm" path="res://assets/fonts/font.ttf" id="2_edbyx"]
 [ext_resource type="Texture2D" uid="uid://dw3nrgi3f2tv1" path="res://assets/textures/pixil-frame-0-104.png" id="3_pf7ec"]
+[ext_resource type="PackedScene" uid="uid://bsxdwyb4at4ok" path="res://assets/prefabs/tile_map.tscn" id="4_cvk2d"]
 
 [sub_resource type="Theme" id="Theme_01gsh"]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.14902, 0.635294, 0.92549, 1)
 Button/constants/outline_size = 4
 Button/fonts/font = ExtResource("2_edbyx")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rey5e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn5ga"]
+
+[sub_resource type="Theme" id="Theme_ppkc2"]
+Button/colors/font_color = Color(0.14902, 0.72549, 0.92549, 0.996078)
+Button/colors/font_disabled_color = Color(0.14902, 0.72549, 0.92549, 0.996078)
+Button/colors/font_outline_color = Color(0, 0, 1, 1)
+Button/constants/outline_size = 4
+Button/fonts/font = ExtResource("2_edbyx")
+Button/styles/disabled = SubResource("StyleBoxEmpty_rey5e")
+Button/styles/focus = SubResource("StyleBoxEmpty_sn5ga")
+Button/styles/hover = SubResource("StyleBoxEmpty_sn5ga")
+Button/styles/normal = SubResource("StyleBoxEmpty_sn5ga")
+Button/styles/pressed = SubResource("StyleBoxEmpty_sn5ga")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_g703y")
@@ -31,6 +48,12 @@ columns = 4
 
 [node name="lvl1" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../Button")
+focus_neighbor_top = NodePath("../../Button")
+focus_neighbor_right = NodePath("../lvl2")
+focus_neighbor_bottom = NodePath("../lvl5")
+focus_next = NodePath("../lvl2")
+focus_previous = NodePath("../../Button")
 theme = SubResource("Theme_01gsh")
 text = "1"
 icon = ExtResource("3_pf7ec")
@@ -39,6 +62,12 @@ icon_alignment = 1
 
 [node name="lvl2" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../lvl1")
+focus_neighbor_top = NodePath("../../Button")
+focus_neighbor_right = NodePath("../lvl3")
+focus_neighbor_bottom = NodePath("../lvl6")
+focus_next = NodePath("../lvl3")
+focus_previous = NodePath("../lvl1")
 theme = SubResource("Theme_01gsh")
 text = "2"
 icon = ExtResource("3_pf7ec")
@@ -47,6 +76,12 @@ icon_alignment = 1
 
 [node name="lvl3" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../lvl2")
+focus_neighbor_top = NodePath("../../Button")
+focus_neighbor_right = NodePath("../lvl4")
+focus_neighbor_bottom = NodePath("../lvl7")
+focus_next = NodePath("../lvl4")
+focus_previous = NodePath("../lvl2")
 theme = SubResource("Theme_01gsh")
 text = "3"
 icon = ExtResource("3_pf7ec")
@@ -55,6 +90,12 @@ icon_alignment = 1
 
 [node name="lvl4" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../lvl3")
+focus_neighbor_top = NodePath("../../Button")
+focus_neighbor_right = NodePath("../lvl5")
+focus_neighbor_bottom = NodePath("../lvl8")
+focus_next = NodePath("../lvl5")
+focus_previous = NodePath("../lvl3")
 theme = SubResource("Theme_01gsh")
 text = "4"
 icon = ExtResource("3_pf7ec")
@@ -63,6 +104,11 @@ icon_alignment = 1
 
 [node name="lvl5" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../lvl4")
+focus_neighbor_top = NodePath("../lvl1")
+focus_neighbor_right = NodePath("../lvl6")
+focus_next = NodePath("../lvl6")
+focus_previous = NodePath("../lvl4")
 theme = SubResource("Theme_01gsh")
 text = "5"
 icon = ExtResource("3_pf7ec")
@@ -71,6 +117,9 @@ icon_alignment = 1
 
 [node name="lvl6" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../lvl5")
+focus_neighbor_top = NodePath("../lvl2")
+focus_neighbor_right = NodePath("../lvl7")
 theme = SubResource("Theme_01gsh")
 text = "6
 "
@@ -88,11 +137,28 @@ icon_alignment = 1
 
 [node name="lvl8" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
+focus_next = NodePath("../../Button")
 theme = SubResource("Theme_01gsh")
 text = "8"
 icon = ExtResource("3_pf7ec")
 flat = true
 icon_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 11.0
+offset_bottom = 11.0
+focus_neighbor_right = NodePath("../GridContainer/lvl1")
+focus_neighbor_bottom = NodePath("../GridContainer/lvl1")
+focus_next = NodePath("../GridContainer/lvl1")
+focus_previous = NodePath("../GridContainer/lvl8")
+theme = SubResource("Theme_ppkc2")
+text = "←back"
+
+[node name="TileMap" parent="." instance=ExtResource("4_cvk2d")]
+position = Vector2(2, 0)
+layer_0/tile_data = PackedInt32Array(589829, 131075, 65539, 589830, 131075, 4, 589831, 131075, 4, 589832, 131075, 4, 589833, 131075, 3, 589834, 196611, 3, 589839, 3, 2, 589840, 3, 2, 589841, 3, 2, 589838, 3, 2, 589837, 262147, 3, 589836, 262147, 4, 589835, 262147, 4, 589828, 196611, 65539, 589827, 262147, 65539, 589826, 3, 2, 589825, 3, 2, 589824, 3, 2, 655360, 3, 3, 655361, 3, 3, 655362, 3, 3, 655363, 262147, 65538, 655364, 327683, 4, 655365, 327683, 4, 655366, 327683, 4, 655367, 327683, 4, 655368, 327683, 4, 655369, 327683, 4, 655370, 327683, 4, 655371, 327683, 4, 655372, 327683, 4, 655373, 262147, 2, 655374, 3, 3, 655375, 3, 3, 655376, 3, 3, 655377, 3, 3, 262146, 196611, 1, 131080, 3, 1, 524303, 65539, 4, 0, 3, 2, 65536, 3, 4, 131072, 3, 2, 196608, 3, 2, 262144, 3, 2, 327680, 3, 2, 393216, 3, 2, 458752, 3, 2, 524288, 3, 2, 1, 3, 2, 65537, 3, 2, 131073, 3, 2, 196609, 131075, 0, 262145, 131075, 1, 327681, 3, 2, 393217, 3, 2, 458753, 3, 2, 524289, 3, 2, 2, 3, 2, 65538, 3, 2, 131074, 3, 2, 196610, 196611, 0, 327682, 3, 2, 393218, 3, 0, 458754, 3, 1, 524290, 3, 2, 3, 3, 2, 65539, 196611, 2, 131075, 3, 2, 196611, 262147, 0, 262147, 262147, 1, 327683, 3, 2, 393219, 65539, 0, 458755, 65539, 1, 524291, 3, 2, 4, 3, 2, 65540, 3, 2, 131076, 3, 2, 196612, 3, 2, 262148, 3, 2, 327684, 65539, 4, 393220, 3, 2, 458756, 3, 2, 524292, 3, 2, 5, 3, 2, 65541, 3, 2, 131077, 3, 2, 196613, 3, 2, 262149, 3, 2, 327685, 196611, 2, 393221, 3, 2, 458757, 3, 2, 524293, 3, 2, 6, 3, 2, 65542, 3, 2, 131078, 3, 2, 196614, 196611, 2, 262150, 3, 2, 327686, 3, 2, 393222, 3, 2, 458758, 3, 2, 524294, 3, 2, 7, 3, 2, 65543, 3, 2, 131079, 3, 2, 196615, 3, 2, 262151, 3, 2, 327687, 3, 2, 393223, 3, 2, 458759, 3, 2, 524295, 3, 2, 8, 3, 2, 65544, 3, 0, 196616, 3, 2, 262152, 3, 2, 327688, 3, 2, 393224, 3, 2, 458760, 3, 2, 524296, 3, 2, 9, 3, 2, 65545, 65539, 0, 131081, 65539, 1, 196617, 3, 2, 262153, 3, 2, 327689, 3, 2, 393225, 3, 2, 458761, 3, 2, 524297, 3, 2, 10, 3, 2, 65546, 3, 2, 131082, 3, 4, 196618, 3, 2, 262154, 3, 2, 327690, 3, 2, 393226, 3, 2, 458762, 3, 2, 524298, 3, 2, 11, 3, 2, 65547, 3, 2, 131083, 3, 2, 196619, 3, 2, 262155, 3, 2, 327691, 3, 2, 393227, 3, 2, 458763, 3, 2, 524299, 3, 2, 12, 3, 2, 65548, 196611, 2, 131084, 3, 2, 196620, 3, 2, 262156, 3, 2, 327692, 196611, 2, 393228, 3, 2, 458764, 3, 2, 524300, 3, 2, 13, 3, 2, 65549, 65539, 2, 131085, 3, 2, 196621, 3, 2, 262157, 131075, 0, 327693, 131075, 1, 393229, 3, 2, 458765, 3, 2, 524301, 3, 2, 14, 3, 2, 65550, 131075, 2, 131086, 3, 2, 196622, 3, 2, 262158, 196611, 0, 327694, 196611, 1, 393230, 3, 2, 458766, 3, 2, 524302, 3, 2, 15, 3, 2, 65551, 3, 2, 131087, 3, 2, 196623, 3, 2, 262159, 262147, 0, 327695, 262147, 1, 393231, 3, 2, 458767, 3, 2, 16, 3, 2, 65552, 3, 2, 131088, 3, 2, 196624, 3, 2, 262160, 3, 2, 327696, 3, 2, 393232, 3, 2, 458768, 3, 2, 524304, 3, 2, 17, 3, 2, 458769, 196611, 2, 524305, 3, 2, 65553, 3, 2, 131089, 3, 2, 196625, 3, 2, 262161, 3, 2, 327697, 3, 2, 393233, 3, 2)
 
 [connection signal="pressed" from="CanvasLayer/GridContainer/lvl1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/lvl2" to="." method="_on_lvl_2_pressed"]
@@ -102,3 +168,4 @@ icon_alignment = 1
 [connection signal="pressed" from="CanvasLayer/GridContainer/lvl6" to="." method="_on_lvl_6_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/lvl7" to="." method="_on_lvl_7_pressed"]
 [connection signal="pressed" from="CanvasLayer/GridContainer/lvl8" to="." method="_on_lvl_8_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

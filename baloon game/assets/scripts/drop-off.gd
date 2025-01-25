@@ -1,5 +1,6 @@
 extends Area2D
 
+var username = "player"
 const redTexture = preload("res://assets/textures/pixil-frame-0-98.png")
 const greenTexture = preload("res://assets/textures/pixil-frame-0-99.png")
 const blueTexture = preload("res://assets/textures/pixil-frame-0-100.png")
@@ -36,7 +37,7 @@ func _on_body_entered(body):
 					if $"..".get_meta("POIs") <= 0:
 						print(get_tree().current_scene.name)
 						print($"..".get_meta(("POIs")))
-						SilentWolf.Scores.save_score("test", body.get_parent().score * -1, get_tree().current_scene.name)
+						SilentWolf.Scores.save_score(username, body.get_parent().score * -1, get_tree().current_scene.name)
 						$"../CanvasLayer4".show()
 						get_tree().paused = true
 					child.queue_free()

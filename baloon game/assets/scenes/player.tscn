@@ -15,10 +15,18 @@ size = Vector2(50, 20)
 size = Vector2(50, 2)
 
 [node name="Node2D" type="RigidBody2D"]
+process_priority = 1
+process_physics_priority = 1
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
 can_sleep = false
 script = ExtResource("1_vqx6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
 position = Vector2(0, 16)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_mfb23")
